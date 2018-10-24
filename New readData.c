@@ -1,4 +1,8 @@
-   #include <stdio.h>
+// readData.c
+// Written by Ahsan Muhammad && Allen, October 2018
+// Assignment 2
+
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
@@ -9,10 +13,10 @@ List GetCollection(void);
 Graph GetGraph(List L);
 
 
-// Read URl's from text files return list
-static List readUrlFile(char *Url_File)
-{
-   // Open File: For Reading
+// Read_UrlFile opens and reads the Urls and makes a linked list out of the Urls
+static List read_UrlFile(char *Url_File){
+
+   
    FILE *in;
    in = fopen(Url_File, "r");
 
@@ -28,8 +32,7 @@ static List readUrlFile(char *Url_File)
    char line[1000] = {'\0'};
 
 
-   // Case 1: collections.txt
-   // Case 2: <url>.txt
+
 
    while( fscanf(in, "%s", line) != EOF ){
    
@@ -57,6 +60,7 @@ static List readUrlFile(char *Url_File)
 
 
 
+
    fclose(in);
 
    return L;
@@ -64,16 +68,17 @@ static List readUrlFile(char *Url_File)
 
 
 
-// Reading Data from text file 'collections.txt'
+// 
+//GetCollections goes on to read the txt file from Sample1
 
 List GetCollection(void){
 
-   return readUrlFile("./Sample1/collection.txt");
+   return read_UrlFile("./Sample1/collection.txt");
 }
 
 
 
-
+// Transforms the linked list that we created previously into the Graph structure
 
 Graph GetGraph(List L){
 
@@ -87,7 +92,7 @@ Graph GetGraph(List L){
         strcpy(path, "./Sample1/");
         strcat(path, curr->v);
         strcat(path, ".txt");
-        curr2 = readUrlFile(path);
+        curr2 = read_UrlFile(path);
         while(curr2 != NULL){
             addEdge(my_graph , curr->v, curr2->v);
     
