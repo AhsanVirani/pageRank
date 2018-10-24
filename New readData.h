@@ -1,6 +1,6 @@
-//
-//
-//
+// readData.c
+// Written by Ahsan Muhammad && Allen, October 2018
+// Assignment 2
 
 #ifndef READDATA_H
 #define READDATA_H
