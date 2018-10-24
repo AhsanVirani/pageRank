@@ -1,5 +1,6 @@
-
-
+// readData.c
+// Written by Ahsan Muhammad && Allen, October 2018
+// Assignment 2
 
 
 #include <stdio.h>
