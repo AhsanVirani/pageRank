@@ -13,11 +13,12 @@ int main (int argc, char *argv[]) {
         printf("Error: Usage ./searchTfldf 'term/word'\n");
     }
     //may need to change if uses more than 1 word without ""
+    //current use if more than 1 word is ./searchTfIdf "more than 2 words"
     else {
         char *term = argv[1];
         FILE *fp;
         //may need to change file name which is opened
-        fp = fopen("./Sample1/collection.txt","r");
+        fp = fopen("collection.txt","r");
         if (fp == NULL) {
             printf("No such file exits");
         }

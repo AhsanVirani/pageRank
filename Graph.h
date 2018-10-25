@@ -1,4 +1,8 @@
-// Graph ADT interface ... COMP2521 
+
+// Week-09 labs
+// Edited by Ahsan and Allen
+// Graph ADT interface ... COMP2521
+
 #include <stdbool.h>
 //#include "graph.h>"
 typedef struct GraphRep *Graph;
