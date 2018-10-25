@@ -1,3 +1,5 @@
+
+// Week 03 labs
 // Linked list implementation ... COMP2521 
 #include <assert.h>
 #include <stdlib.h>
@@ -43,9 +45,7 @@ List insertLL(List L, char *n) {
 List deleteLL(List L, char *n) {
   
   if(L == NULL){
-  
     return L;
-  
   }
   
   List temp;
@@ -56,22 +56,14 @@ List deleteLL(List L, char *n) {
        prev = curr;
     
     if(strcmp(curr->v, n) == 0){
-    
-    
          temp = curr;
-         
-        if(prev == curr){
-        
-            L = L->next;
-        
-        
+     
+        if(prev == curr){   
+            L = L->next;   
         }    
     
         else{
-        
             prev->next = curr->next;
-        
-        
         }
     
     
