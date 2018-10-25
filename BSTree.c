@@ -1,7 +1,4 @@
-
-// Reference week-10 Labs
-// Binary Search Tree ADT implementation ...
-// Edited by Ahsan and Allen
+ // Binary Search Tree ADT implementation ...
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -156,6 +153,13 @@ Tree rotateLeft(Tree n2) {
    return n1;
 }
 
+/*Tree insertAtRoot(Tree t, I) {
+
+   printf("Not yet implemented.\n");
+
+   return t;
+}
+*/
 
 Tree partition(Tree t, int i) {
    if (t != NULL) {

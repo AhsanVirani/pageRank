@@ -1,24 +1,27 @@
+// graph.h ... Interface to Graph of strings
+// Written by John Shepherd, September 2015
 
-// Week-09 labs
-// Edited by Ahsan and Allen
-// Graph ADT interface ... COMP2521
+#ifndef GRAPH_H
+#define GRAPH_H
 
-#include <stdbool.h>
-//#include "graph.h>"
+typedef unsigned char Num;
+
+typedef struct GraphRep {
+	int   nV;
+	int   maxV;
+	char  **vertex;
+	Num   **edges;
+} GraphRep;
+
 typedef struct GraphRep *Graph;
 
-// vertices are ints
-typedef int Vertex;
-
-// edges are pairs of vertices (end-points)
-typedef struct Edge {
-   Vertex v;
-   Vertex w;
-} Edge;
+// Function signatures
 
 Graph newGraph(int);
-void  insertEdge(Graph, Edge);
-void  removeEdge(Graph, Edge);
-bool  adjacent(Graph, Vertex, Vertex);
-void  showGraph(Graph);
-void  freeGraph(Graph);
+void  disposeGraph(Graph);
+int   addEdge(Graph,char *,char *);
+int   nVertices(Graph);
+int   isConnected(Graph, char *, char *);
+void  showGraph(Graph,int);
+
+#endif

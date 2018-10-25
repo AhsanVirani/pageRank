@@ -2,10 +2,10 @@
 
 #include <stdio.h>
 #include "list.h"
-#include "graph.h"
+#include "Graph.h"
 #include "pagerank.h"
 
-void  PageRankW(graph my_graph, double d, double diffPR, int maxIterations){
+void  PageRankW(Graph my_graph, double d, double diffPR, int maxIterations){
 
 
  /*
@@ -33,20 +33,14 @@ void  PageRankW(graph my_graph, double d, double diffPR, int maxIterations){
 
 */
 
-#include <stdio.h>
-#include "graph.h"
-#include "list.h"
-#include "pagerank.h"
-
-
 void PageRankW(Graph g , double DF , double diffPR , int maxIteration){
    
     // N = Number of urls in the collection = g->nV
     //Initialising 
     
-    double PR_Arr[g->nV] = {0};
+    double PR_Arr[g->nV];
     int i;
-    for(i = 0; g->nV; i++){
+    for(i = 0; i < g->nV; i++){
     
         PR_Arr[i] = 1/((double)g->nV);
         

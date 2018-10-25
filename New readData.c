@@ -20,6 +20,7 @@ static List read_UrlFile(char *Url_File){
    
    FILE *in;
    in = fopen(Url_File, "r");
+
    if (in == NULL){
    
         fprintf(stderr, "%s", "No File Exists\n");
@@ -64,6 +65,8 @@ List GetCollection(void){
    return read_UrlFile("./Sample1/collection.txt");
 }
 
+
+
 // Transforms the linked list that we created previously into the Graph structure
 
 Graph GetGraph(List L){
@@ -104,13 +107,14 @@ static List read_UrlFile_sec2(char *Url_File){
    
    List L = NULL;
    char line[1000] = {'\0'};
-   
-   
+
+
+    
    int c = 1;
    while( fscanf(in, "%s", line) != EOF ){
    
       if ( (strcmp(line, "#end") != 0) && c == 1){
-    
+      
         continue;
       
       }

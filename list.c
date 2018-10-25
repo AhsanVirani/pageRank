@@ -16,15 +16,15 @@ static Node *makeNode(char *n);
 
 static Node *makeNode(char *n) {
    Node *new = malloc(sizeof(Node));
-   n = strdup(n);
+   new->v = malloc(sizeof(n));
    assert(new != NULL);
-   new->v = n;
+   strcpy(new->v, n);
    new->next = NULL;
    return new;
 }
 
 List insertLL(List L, char *n) {
-    if(inLL(L, n))  return L;
+
     List curr = L;   
     if ( L == NULL ) return makeNode(n);
     else if ( L->next == NULL ){
