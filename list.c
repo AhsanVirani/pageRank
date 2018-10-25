@@ -1,16 +1,20 @@
 // Linked list implementation ... COMP2521 
-#include "list.h"
 #include <assert.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "list.h"
 
-typedef struct Node {
-   char*        v;
-   struct Node *next; 
-} Node;
+List insertLL(List, char *);
+List deleteLL(List, char *);
+bool inLL(List, char *);
+void freeLL(List);
+void showLL(List);
+int sizeLL(List);
+static Node *makeNode(char *n);
 
-Node *makeNode(char *n) {
+
+static Node *makeNode(char *n) {
    Node *new = malloc(sizeof(Node));
    n = strdup(n);
    assert(new != NULL);
@@ -20,7 +24,7 @@ Node *makeNode(char *n) {
 }
 
 List insertLL(List L, char *n) {
-
+    if(inLL(L, n))  return L;
     List curr = L;   
     if ( L == NULL ) return makeNode(n);
     else if ( L->next == NULL ){
@@ -115,7 +119,7 @@ int sizeLL(List L){
     int size = 0;
     while(L != NULL){
     
-        size++
+        size++;
         L = L->next;
     
     
