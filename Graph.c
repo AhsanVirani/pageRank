@@ -1,5 +1,9 @@
+
+// Week09 labs
 // Graph ADT
+// Edited by Ahsan and Allen
 // Adjacency List Representation ... COMP2521 
+
 #include "graph.h"
 #include "list.h"
 #include <assert.h>
