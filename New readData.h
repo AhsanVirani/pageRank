@@ -7,10 +7,10 @@
 
 
 #include "list.h"
-
+#include "BSTree.h"
 
 List GetCollection(void);
 Graph GetGraph(List L);
-
+Tree GetInvertedList(List L);
 
 #endif
