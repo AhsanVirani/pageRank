@@ -7,7 +7,7 @@
 #include <string.h>
 #include <assert.h>
 #include <ctype.h>
-#include "Graph.h"
+#include "graph.h"
 #include "readData.h"
 
 List GetCollection(void);
