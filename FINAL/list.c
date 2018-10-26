@@ -16,15 +16,15 @@ static Node *makeNode(char *n);
 
 static Node *makeNode(char *n) {
    Node *new = malloc(sizeof(Node));
-   new->v = malloc(sizeof(n));
+   n = strdup(n);
    assert(new != NULL);
-   strcpy(new->v, n);
+   new->v = n;
    new->next = NULL;
    return new;
 }
 
 List insertLL(List L, char *n) {
-
+    if(inLL(L, n))  return L;
     List curr = L;   
     if ( L == NULL ) return makeNode(n);
     else if ( L->next == NULL ){
@@ -127,4 +127,56 @@ int sizeLL(List L){
 
     return size;
     
+}
+
+//Reference geekforgeeks help
+/* Bubble sort the given linked list */
+void bubbleSort(List start) 
+{ 
+    int swapped; 
+    struct Node *ptr1; 
+    struct Node *lptr = NULL; 
+  
+    /* Checking for empty list */
+    if (start == NULL) 
+        return; 
+  
+    do
+    { 
+        swapped = 0; 
+        ptr1 = start; 
+  
+        while (ptr1->next != lptr) 
+        { 
+            if (strcmp(ptr1->v, ptr1->next->v) > 0) 
+            {  
+                swap(ptr1, ptr1->next); 
+                swapped = 1; 
+            } 
+            ptr1 = ptr1->next; 
+        } 
+        lptr = ptr1; 
+    } 
+    while (swapped); 
+} 
+
+/* function to swap data of two nodes a and b*/
+void swap(List a, List b) 
+{ 
+   char *temp = a->v; 
+    a->v = b->v; 
+    b->v = temp; 
+} 
+
+
+char *ConvertToString(List L){
+    char *string  = malloc(sizeof(char)*BUFSIZ);
+    memset(string, '\0', BUFSIZ);
+    while ( L != NULL){
+        strcat(string, L->v);
+        strcat(string, " ");
+        L = L->next;
+
+    }
+    return string;
 }
