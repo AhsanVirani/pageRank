@@ -4,10 +4,6 @@
 #include "list.h"
 #include "Graph.h"
 #include "pagerank.h"
-
-void  PageRankW(Graph my_graph, double d, double diffPR, int maxIterations){
-
-
  /*
  Read "web pages" from the collection in file "collection.txt"
             and build a graph structure using Adjacency List Representation

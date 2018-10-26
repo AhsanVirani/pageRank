@@ -5,9 +5,8 @@
 #include "Graph.h"
 #include "pagerank.h"
 
-void  PageRankW(Graph my_graph, double d, double diffPR, int maxIterations){
-
-
+void  PageRankW(Graph my_graph, double d, double diffPR, int maxIterations);
+        
  /*
  Read "web pages" from the collection in file "collection.txt"
             and build a graph structure using Adjacency List Representation
@@ -40,7 +39,7 @@ void PageRankW(Graph g , double DF , double diffPR , int maxIteration){
     
     double PR_Arr[g->nV];
     int i;
-    for(i = 0; i < g->nV; i++){
+    for(i = 0; i < g->nV; i++) {
     
         PR_Arr[i] = 1/((double)g->nV);
         
@@ -64,6 +63,4 @@ void PageRankW(Graph g , double DF , double diffPR , int maxIteration){
         iteration++;
         
    }
-    
-
 }
