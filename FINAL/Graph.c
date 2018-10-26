@@ -11,6 +11,13 @@
 
 typedef unsigned char Num;
 
+typedef struct GraphRep {
+	int   nV;
+	int   maxV;
+	char  **vertex;
+	Num   **edges;
+} GraphRep;
+
 // Function signatures
 
 Graph newGraph();
@@ -155,7 +162,6 @@ static int vertexID(char *str, char **names, int N)
 // - add Str at end of Names
 int addVertex(char *str, char **names, int N)
 {
-    names[N] = malloc(sizeof(str));
-	strcpy(names[N],str);
+	names[N] = strdup(str);
 	return N;
 }
